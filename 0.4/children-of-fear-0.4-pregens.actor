@@ -1,0 +1,244 @@
+EXTENSION "ChildrenOfFear_Pregens" EXTENDS "CallOfCthulhu7e_Core_Base" {
+    NAME "The Children of Fear - Pre-Generated Investigators"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-17"
+
+    #toX0TcH9VNr4gwFR9MXha9uI ^"Chang Mei" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Chang Mei"
+            ^"Role" STRING "Linguist, Yenching University"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 40
+                ^"CON" INTEGER 50
+                ^"SIZ" INTEGER 50
+                ^"DEX" INTEGER 85
+                ^"APP" INTEGER 60
+                ^"INT" INTEGER 70
+                ^"POW" INTEGER 70
+                ^"EDU" INTEGER 80
+            }
+            ^"Hit Points" INTEGER 10
+            ^"Magic Points" INTEGER 14
+            ^"Sanity" INTEGER 70
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "55% (27/11)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (Calligraphy) 35% (17/7)", "Credit Rating 30% (15/6)", "History 50% (32/13)", "Language (Chinese) 80% (40/16)", "Language (English) 50% (27/11)", "Language (Sanskrit) 60% (30/12)", "Language (Tibetan) 40% (20/8)", "Library Use 70% (35/14)", "Listen 40% (20/8)", "Lore (Buddhism) 30% (15/6)", "Persuade 50% (30/12)", "Spot Hidden 75% (37/15)", "plus one other language of the player's choice at 35% (17/7)"]
+            ^"Description" STRING "One of the first women to graduate from Peking University after it opened to female students in 1920. Her flair for ancient and modern languages makes her a valuable addition to the American School of Archaeology at Yenching University, where she works with Dr. Eudora Lockhart translating and cataloguing manuscripts. Known as \"Mei Mei,\" she is a conscientious, gifted, and quietly devout Buddhist scholar from an old, respected Peking family."
+        }
+    }
+
+    #tJGEcKgD88Z6pwt9CXmhmTPs ^"Dr. Eudora Lockhart" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Dr. Eudora Lockhart"
+            ^"Role" STRING "Archaeologist, Yenching University"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 45
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 45
+                ^"APP" INTEGER 70
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 65
+                ^"EDU" INTEGER 90
+            }
+            ^"Hit Points" INTEGER 10
+            ^"Magic Points" INTEGER 13
+            ^"Sanity" INTEGER 65
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Purdey shotgun (12-g, DB)"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "4D6/2D6/1D6"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "45% (22/9)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Appraise 50% (25/10)", "Archaeology 70% (35/14)", "Credit Rating 40% (20/8)", "History 65% (32/13)", "Language (Chinese) 25% (12/5)", "Language (English) 90% (45/18)", "Language (Italian) 40% (20/8)", "Library Use 65% (32/13)", "Mechanical Repair 20% (10/4)", "Navigate 40% (20/8)", "Ride 40% (20/8)", "Spot Hidden 60% (30/12)", "Survival (Desert) 40% (20/8)"]
+            ^"Description" STRING "A formidable woman who worked her way up in a male-dominated discipline, trained at University College London under Prof. William Flinders Petrie. Born to wealthy British industrialist Jeremiah Jessop and his Venetian wife, she traveled widely as a child. She married American diplomat Charles Lockhart in Shanghai, later joining Peking's American School of Archaeology as its first female archaeology lecturer. She dreams of making discoveries at the Caves of the Thousand Buddhas."
+        }
+    }
+
+    #taseK7fx9V988NsQpos39bXv ^"Charles Lockhart" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Charles Lockhart"
+            ^"Role" STRING "Diplomat"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 65
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 75
+                ^"DEX" INTEGER 60
+                ^"APP" INTEGER 70
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 70
+                ^"EDU" INTEGER 70
+            }
+            ^"Hit Points" INTEGER 13
+            ^"Magic Points" INTEGER 14
+            ^"Sanity" INTEGER 70
+            ^"Move Rate" INTEGER 6
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "35% (17/7)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "30% (15/6)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Charm 55% (27/11)", "Credit Rating 40% (20/8)", "Fast Talk 65% (32/13)", "History 60% (30/12)", "Intimidate 50% (25/10)", "Language (Chinese) 55% (32/11)", "Language (English) 75% (37/15)", "Listen 60% (30/12)", "Persuade 65% (32/13)", "Psychology 60% (30/12)"]
+            ^"Description" STRING "A capable athlete and popular socialite with a way with people. After his arranged fiancée eloped on their wedding day, Charles joined the US Diplomatic Corps and shipped out to Shanghai as a junior clerk to the American Legation, where he fell in love with British adventuress Eudora Jessop. Now stationed in Peking, his evenhandedness and insistence on treating everyone as equals infuriates his stuffier superiors, but he remains good at his job."
+        }
+    }
+
+    #tz4BFTDTfExkfSv04fvTsQNK ^"Michael Li" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Michael Li"
+            ^"Role" STRING "Christian Missionary"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 65
+                ^"DEX" INTEGER 45
+                ^"APP" INTEGER 60
+                ^"INT" INTEGER 65
+                ^"POW" INTEGER 65
+                ^"EDU" INTEGER 65
+            }
+            ^"Hit Points" INTEGER 12
+            ^"Magic Points" INTEGER 13
+            ^"Sanity" INTEGER 65
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "45% (22/9)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Anthropology 25% (12/5)", "Credit Rating 10% (5/2)", "First Aid 45% (22/9)", "Language (Chinese) 55% (27/11)", "Language (English) 65% (32/13)", "Lore (Buddhism) 25% (12/5)", "Lore (Christianity) 50% (25/10)", "Lore (Other Faiths) 30% (15/6)", "Medicine 30% (15/6)", "Natural World 30% (15/6)", "Persuade 50% (25/12)", "Psychology 50% (25/12)", "Spot Hidden 50% (25/12)", "Survival (Desert) 30% (15/6)"]
+            ^"Description" STRING "Born Li Jianyu to a poor family in Shantung Province, he lost his parents in the Boxer Rebellion and was rescued by Scottish Protestant missionary Grace Strachan, surviving the siege of Peking's Foreign Legation Quarter. Raised as Michael in his adopted faith, he traveled across Kokonor and Sinkiang aiding his mother's missionary work for the China Inland Mission. He has a keen interest in Muslim, Buddhist, and Taoist faiths and is secretly writing a manuscript about his travels."
+        }
+    }
+
+    #tyW3Y5ytBOLvd69z9bVJ7zUE ^"Timur Stepanovich Repin" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Timur Stepanovich Repin"
+            ^"Role" STRING "White Army Russian refugee"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 70
+                ^"DEX" INTEGER 90
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 70
+                ^"POW" INTEGER 70
+                ^"EDU" INTEGER 60
+            }
+            ^"Hit Points" INTEGER 13
+            ^"Magic Points" INTEGER 14
+            ^"Sanity" INTEGER 58
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Mauser C96 pistol"
+                    ^"Skill Value" STRING "65% (32/13)"
+                    ^"Damage" STRING "1D10+2"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "55% (27/11)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (Acting) 50% (25/10)", "Credit Rating 20% (10/4)", "Firearms (Rifle) 40% (20/8)", "First Aid 50% (25/10)", "History (Art) 45% (22/9)", "Intimidate 65% (32/13)", "Language (Chinese) 35% (17/7)", "Language (English) 25% (12/5)", "Language (Russian) 60% (30/12)", "Listen 60% (30/12)", "Navigate 30% (15/6)", "Psychology 60% (30/12)", "Spot Hidden 45% (22/9)", "Stealth 50% (25/10)", "Survival (Desert) 30% (15/6)", "Throw 35% (17/7)"]
+            ^"Description" STRING "Once hoping to join the Imperial Russian Ballet, Repin was drafted in the Great War and served on the Eastern Front before fleeing to Peking in 1920. He built a new life as a janitor at Yenching University and art history assistant to Dr. Eudora Lockhart. In truth, sickened by Tsarist decadence, he secretly joined the Bolsheviks and is a Soviet spy sent to report on the White Russian expatriate community. He is immune to Sanity loss from viewing a corpse or gross injury and suffers ligyrophobia."
+        }
+    }
+
+    #tygY5LCgf2BqvS4TMoZtRjYH ^"Sofian Bazaz-Wain" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Sofian Bazaz-Wain"
+            ^"Role" STRING "Photojournalist and Explorer"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 45
+                ^"SIZ" INTEGER 70
+                ^"DEX" INTEGER 60
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 70
+                ^"POW" INTEGER 50
+                ^"EDU" INTEGER 87
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 10
+            ^"Sanity" INTEGER 44
+            ^"Move Rate" INTEGER 6
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Webley .38 revolver"
+                    ^"Skill Value" STRING "50% (25/10)"
+                    ^"Damage" STRING "1D10"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "30% (15/6)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (Photography) 65% (32/13)", "Art/Craft (Writing) 35% (17/7)", "Charm 65% (32/13)", "Climb 30% (15/6)", "Credit Rating 30% (15/6)", "First Aid 40% (20/8)", "History (Exploration) 45% (22/9)", "Language (English) 90% (45/18)", "Language (French) 35% (17/7)", "Language (Hindustani) 55% (27/11)", "Natural World 40% (20/8)", "Navigate 40% (20/8)", "Psychology 60% (30/12)", "Science (Chemistry) 40% (20/8)", "Spot Hidden 60% (30/12)", "Stealth 40% (20/8)", "Survival (Desert) 30% (15/6)"]
+            ^"Description" STRING "Fascinated by explorers as a boy in Srinagar, Sofian and his brother Adem planned expeditions across the Karakorums, later making the journey across the Taklamakan Desert to Sian. His published article and photographs made him a famous freelance journalist. He worked as an expedition photographer and, during the Great War, a war correspondent. His brother Adem's death on the Western Front in 1917 drove him to continue his travels in his honor. A devotee of Islam, he is immune to Sanity loss from viewing a corpse or gross injury and suffers ecdemomania."
+        }
+    }
+
+}
