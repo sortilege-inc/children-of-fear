@@ -38,7 +38,7 @@ html, body {
   padding: 0;
   background: #c4b48a;
   color: var(--ink);
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
   font-size: 16px;
   line-height: 1.65;
   font-weight: 400;
@@ -792,6 +792,178 @@ footer.colophon {
 }
 footer.colophon .colophon-seal { color: var(--seal-deep); }
 
+/* ============ CHRONICLE — VERBATIM PLAY TEXT ============ */
+/* Beat divider (the source's "---" scene breaks, within a scene) */
+.beat-break {
+  border: 0;
+  margin: 1.5rem auto;
+  width: 40%;
+  text-align: center;
+  line-height: 1;
+}
+.beat-break::before {
+  content: "❦";
+  color: var(--rule);
+  font-size: 0.95rem;
+}
+
+/* Whole-italic stage-direction / time-passage paragraphs */
+.interlude {
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-faint);
+  line-height: 1.66;
+  margin: 0 0 0.85rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.interlude:last-child { margin-bottom: 0; }
+.interlude strong { font-style: normal; color: var(--ink); font-weight: 600; }
+
+/* Post-type annotation label ([Keeper post] / [Player post] / [Keeper note]) */
+.post-tag {
+  display: inline-block;
+  font-family: "Special Elite", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  margin: 0.25rem 0 0.85rem;
+  border: 1px solid var(--rule);
+  color: var(--ink-faint);
+  background: rgba(228, 215, 188, 0.5);
+}
+.post-tag.keeper { border-color: var(--indigo); color: var(--indigo); }
+.post-tag.player { border-color: var(--jade-deep); color: var(--jade-deep); }
+.post-tag.note { border-color: var(--gold); color: var(--gold); background: rgba(184,165,116,0.14); }
+
+/* Roll call (source blockquote "> Roll: ...") */
+.roll {
+  margin: 0.9rem 0;
+  padding: 0.55rem 0.9rem;
+  background: var(--seal-faint);
+  border-left: 3px solid var(--seal);
+  font-family: "Special Elite", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+}
+.roll .roll-label {
+  color: var(--seal-deep);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-right: 0.4rem;
+}
+
+/* Roll result badge (e.g. "6 — Extreme Success") */
+.roll-result {
+  display: inline-block;
+  font-family: "Special Elite", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  margin: 0 0 0.85rem;
+  background: var(--seal);
+  color: var(--paper);
+  box-shadow: 0 1px 2px rgba(107,31,27,0.3);
+}
+.roll-result.miss { background: var(--ink-faint); }
+
+/* Embedded typed document (security assessment, supply lists, contacts) */
+.doc-block {
+  margin: 1.1rem 0;
+  padding: 1.5rem 1.75rem;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 1.6rem, rgba(107,81,50,0.05) 1.6rem, rgba(107,81,50,0.05) calc(1.6rem + 1px)),
+    var(--paper-warm);
+  border: 1px solid var(--rule);
+  box-shadow: inset 0 0 0 1px rgba(184,165,116,0.3), 0 1px 3px rgba(26,22,18,0.12);
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.doc-block .doc-title {
+  text-align: center;
+  font-size: 0.86rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+.doc-block .doc-meta {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.74rem;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+  font-family: "Cormorant Garamond", serif;
+}
+.doc-block h4 {
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--seal-deep);
+  margin: 1.1rem 0 0.4rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px dotted var(--rule-soft);
+}
+.doc-block h4:first-child { margin-top: 0; }
+.doc-block ul, .doc-block ol { margin: 0.4rem 0 0.6rem; padding-left: 1.4rem; }
+.doc-block li { margin-bottom: 0.35rem; padding-left: 0.2rem; }
+.doc-block p { margin: 0 0 0.6rem; }
+.doc-block em { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 0.95em; color: var(--ink-faint); }
+.doc-block strong { color: var(--ink); }
+.doc-block .doc-line { color: var(--seal-deep); }
+
+/* Telegram */
+.telegram {
+  margin: 1.1rem 0;
+  padding: 1.1rem 1.4rem;
+  background: var(--paper-fold);
+  border: 1px dashed var(--ink-faint);
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  line-height: 1.9;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+/* Newspaper headline / bold broadsheet line */
+.broadsheet {
+  font-family: "Special Elite", monospace;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--seal-deep);
+  margin: 0.6rem 0 0.85rem;
+  padding: 0.55rem 0.5rem;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+/* Chapter contents / jump list under a chapter masthead */
+.chapter-toc {
+  columns: 2;
+  column-gap: 2rem;
+  margin: 1rem 0 0;
+  padding: 0.9rem 1.1rem;
+  background: rgba(228,215,188,0.4);
+  border: 1px solid var(--rule-soft);
+  list-style: none;
+}
+.chapter-toc li {
+  break-inside: avoid;
+  padding: 0.2rem 0;
+  font-size: 0.94rem;
+}
+.chapter-toc a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--rule); }
+.chapter-toc a:hover { color: var(--seal); border-color: var(--seal); }
+
 /* ============ MOBILE ============ */
 @media (max-width: 720px) {
   body { padding: 1rem 0.5rem 3rem; }
@@ -815,4 +987,8 @@ footer.colophon .colophon-seal { color: var(--seal-deep); }
   .session-name { font-size: 1.2rem; }
   .file-strip { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
   footer.colophon { flex-direction: column; gap: 0.4rem; text-align: center; }
+  .doc-block { padding: 1rem 1.05rem; font-size: 0.76rem; }
+  .telegram { padding: 0.9rem 1rem; letter-spacing: 0.06em; }
+  .chapter-toc { columns: 1; }
+  .scene { padding: 1rem 1rem; }
 }

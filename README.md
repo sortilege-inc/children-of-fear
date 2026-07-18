@@ -16,8 +16,7 @@ python3 -m http.server 8761
 | --- | --- |
 | `index.html` | **The Codex** — cover masthead and navigation into every section. |
 | `investigators.html` | **The Party** — the four investigators (portraits, characteristics, bios) and the relationship web; each card links to a full dossier. |
-| `chronicle.html` | **The Journey So Far** — Chapters I–II as scene-by-scene log with investigator/NPC tags, handouts, and threads left hanging. |
-| `interior.html` | **Interior Lives** — the Ch'ien marriage, the Gurdit & Marie slow burn, and the marriage frame. |
+| `chronicle.html` | **The Journey So Far** — the verbatim play record of Chapters I–II, broken into scenes with investigator/NPC tags, rolls, and embedded documents. |
 | `keeper.html` | **The Keeper's Table** — the play-by-post method, the four cosmologies of sanity, pacing traps, and canon established in play. |
 | `investigators/<slug>/dossier.html` | The four full investigator dossiers (sheet, languages, lineage, field journal), with portraits. |
 | `expedition.css` | Shared stylesheet — the 1923 "expedition file" aesthetic (aged paper, seal-red chop, epigraphs) drawn from the dossiers. |
