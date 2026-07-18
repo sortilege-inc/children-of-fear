@@ -1,0 +1,38 @@
+# The Children of Fear — master campaign file.
+# Sequences the eight chapter ARCs into one long-form campaign. Structure only;
+# per-chapter detail lives in each `.arc`, and narrative summaries in the `.lore`.
+# Built on the Call of Cthulhu 7e core (see titterpig-dsl-callofcthulhu7e).
+
+CAMPAIGN "ChildrenOfFear" {
+    NAME "The Children of Fear"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    DEPENDS_ON "CallOfCthulhu7e_Core_Base"
+
+    THEMES {
+        "An epic, player-led 1920s journey across China, Central Asia, northern India, and hidden Tibet, following the old Silk Road pilgrim route of Hiuen-Tsiang."
+        "A race to determine the fate of a prophesied reincarnation — the 'King of Fear' — and to reckon with the lieutenants who would see the world remade in terror."
+        "Scalable Mythos involvement: the Keeper tunes the threat from the cosmic (the Outer Gods) down to a low-key, occult-focused intrigue."
+        "Travel, culture, and comparative myth as gameplay: the route itself is the spine of the campaign, and the investigators choose the path they take."
+    }
+
+    # --- Arc sequence -----------------------------------------------------
+    # Chapter 1 is authored; chapters 2-8 are added to this sequence as each
+    # `.arc` is built (their FROM ARC lines are held back so the campaign
+    # validates against the arcs that currently exist).
+    FROM ARC "ChildrenOfFear_Ch1_City_of_Decaying_Splendor"
+    # FROM ARC "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun"
+    # FROM ARC "ChildrenOfFear_Ch3_Song_of_the_Lost_and_Forgotten"
+    # FROM ARC "ChildrenOfFear_Ch4_Old_Bones"
+    # FROM ARC "ChildrenOfFear_Ch5_Feast_and_Famine"
+    # FROM ARC "ChildrenOfFear_Ch6_Liberation"
+    # FROM ARC "ChildrenOfFear_Ch7_Spirits_of_the_Earth"
+    # FROM ARC "ChildrenOfFear_Ch8_The_Heart_of_the_World"
+
+    PROGRESSION {
+        BETWEEN "ChildrenOfFear_Ch1_City_of_Decaying_Splendor" AND "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun" {
+            DOWNTIME "Overland travel westward out of Peking toward Chang'an — weeks on the road for preparation, research, and investigator development."
+            ADVANCEMENT "Standard 7e experience: skill improvement checks from the chapter's rolls; the investigators build their expedition and contacts."
+        }
+    }
+}
