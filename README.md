@@ -1,10 +1,6 @@
 # children-of-fear
 
-The Children of Fear (Chaosium) encoded as a Titterpig campaign — a master
-`.campaign` that sequences per-chapter `.arc` files, with `.actor` NPC stat
-blocks and `.lore` Keeper summaries. Built on the Call of Cthulhu 7e core
-(`titterpig-dsl-callofcthulhu7e`); validate a chapter's `.actor`/`.arc` together
-with that core.
-
-Structure is captured in the DSL; the full narrative, read-aloud text, and
-handouts remain in the published book. Status: Chapter 1 slice (0/0).
+**Relocated.** The Children of Fear campaign DSL now lives in the Call of Cthulhu
+7e edition namespace, at `titterpig-dsl-callofcthulhu7e/0.4/children-of-fear/`,
+so it validates alongside the CoC core it depends on. This repo is superseded and
+may be archived.
