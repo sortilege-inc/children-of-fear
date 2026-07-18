@@ -1,0 +1,935 @@
+EXTENSION "ChildrenOfFear_Appendix_NPCs" EXTENDS "CallOfCthulhu7e_Core_Base" {
+    NAME "The Children of Fear - Appendix A: NPC & Monster Compendium"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-17"
+
+    #t70KKPk7IwukVsiQvRjd0BJD ^"Archaeologist" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Archaeologist"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 65
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 55
+                ^"DEX" INTEGER 65
+                ^"APP" INTEGER 60
+                ^"INT" INTEGER 80
+                ^"POW" INTEGER 50
+                ^"EDU" INTEGER 90
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 10
+            ^"Sanity" INTEGER 50
+            ^"Move Rate" INTEGER 9
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "35% (17/7)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING ".32 revolver"
+                    ^"Skill Value" STRING "40% (20/8)"
+                    ^"Damage" STRING "1D8"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "32% (16/6)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Appraise 50%", "Archaeology 66%", "Art/Craft (Photography) 40%", "History 60%", "Library Use 60%", "Mechanical Repair 30%", "Navigate 40%", "Persuade 60%", "Spot Hidden 65%", "Other (as appropriate) 51%", "Own (as appropriate) 90%"]
+            ^"Description" STRING "Age 25–50. Professionally trained archaeologist searching for relics of the ancient past; often arrogant and given to plundering sites for museums and private collectors."
+        }
+    }
+
+    #tZRLYzvPN0YD6VSCSQdWmN9h ^"Bandit" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Bandit"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 75
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 50
+                ^"DEX" INTEGER 70
+                ^"APP" INTEGER 55
+                ^"INT" INTEGER 45
+                ^"POW" INTEGER 45
+                ^"EDU" INTEGER 40
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 9
+            ^"Sanity" INTEGER 45
+            ^"Move Rate" INTEGER 9
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Knife"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D8+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Matchlock rifle"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D10+4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "55% (27/11)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Fast Talk 55%", "Intimidate 55%", "Psychology 45%", "Ride 45%", "Stealth 50%", "Spot Hidden 50%", "Other (as appropriate) 31%", "Own (as appropriate) 40%"]
+            ^"Description" STRING "Age 15–45. Robber of trade and pilgrim routes, sometimes polite, sometimes bloodthirsty, preying on travelers far beyond the reach of the law."
+        }
+    }
+
+    #ttUKmouga5VYhstOGFnRqnxj ^"Explorer" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Explorer"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 65
+                ^"CON" INTEGER 70
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 50
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 65
+                ^"EDU" INTEGER 70
+            }
+            ^"Hit Points" INTEGER 13
+            ^"Magic Points" INTEGER 13
+            ^"Sanity" INTEGER 65
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING ".32 revolver"
+                    ^"Skill Value" STRING "50% (25/12)"
+                    ^"Damage" STRING "1D8"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING ".30 Lever-action carbine"
+                    ^"Skill Value" STRING "40% (20/8)"
+                    ^"Damage" STRING "2D6"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "25% (12/5)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Climb 50%", "History 50%", "Jump 50%", "Natural World 50%", "Navigate 60%", "Ride 45%", "Survival 60%", "Other (as appropriate) 51%", "Other (as appropriate) 31%", "Own (as appropriate) 70%"]
+            ^"Description" STRING "Age 20–55. Hunter of unmapped places or unknown things (such as plants), determined, stubborn and fearless, needing backers for trips into the unknown."
+        }
+    }
+
+    #tdroxwLTrIF1umVSysRWLuZm ^"Government Bureaucrat" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Government Bureaucrat"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 55
+                ^"DEX" INTEGER 40
+                ^"APP" INTEGER 45
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 60
+                ^"EDU" INTEGER 75
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 12
+            ^"Sanity" INTEGER 60
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "20% (10/4)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Accounting 45%", "Fast Talk 65%", "History 35%", "Law 65%", "Library Use 60%", "Listen 60%", "Persuade 60%", "Psychology 50%", "Science (Cryptography) 31%", "Other (as appropriate) 51%", "Own (as appropriate) 75%"]
+            ^"Description" STRING "Age 30–50. Official determined to do everything by the book; can be a powerful ally or a terrible foe who buries you beneath paperwork."
+        }
+    }
+
+    #t9S12TisXuvoCmRZg83prNcX ^"Government Runner" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Government Runner"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 65
+                ^"CON" INTEGER 80
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 60
+                ^"APP" INTEGER 65
+                ^"INT" INTEGER 70
+                ^"POW" INTEGER 75
+                ^"EDU" INTEGER 60
+            }
+            ^"Hit Points" INTEGER 14
+            ^"Magic Points" INTEGER 15
+            ^"Sanity" INTEGER 75
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "60% (30/12)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Climb 50%", "Jump 50%", "Fast Talk 55%", "Natural World 45%", "Navigate 60%", "Sleight of Hand 45%", "Survival 60%", "Other (as appropriate) 51%", "Own (as appropriate) 60%"]
+            ^"Description" STRING "Age 15–30. Trusted courier who carries sensitive missives across hostile terrain; wiry, quiet and dedicated. For Tibetan Riders, substitute Ride for Climb."
+        }
+    }
+
+    #tdzGKEUWoFfIKnAghf6ZgYt7 ^"Holy Person/Mystic" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Holy Person/Mystic"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 75
+                ^"SIZ" INTEGER 70
+                ^"DEX" INTEGER 80
+                ^"APP" INTEGER 40
+                ^"INT" INTEGER 80
+                ^"POW" INTEGER 75
+                ^"EDU" INTEGER 60
+            }
+            ^"Hit Points" INTEGER 14
+            ^"Magic Points" INTEGER 15
+            ^"Sanity" INTEGER 75
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "35% (17/7)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "40% (20/8)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["History 45%", "Fast Talk/Persuade 50%", "Listen 50%", "Lore (as appropriate to their beliefs) 60%", "Natural World 40%", "Occult 55%", "Psychology 50%", "Spot Hidden 65%", "Survival (as appropriate) 45%", "Other (as appropriate) 45%", "Other (as appropriate) 31%", "Own (as appropriate) 60%"]
+            ^"Description" STRING "Age 14+. A sadhu, Aghori, Danyal, seer or folk magic practitioner drawing power from a community that fears them; may know any number of folk magic spells at the Keeper's discretion."
+        }
+    }
+
+    #tzAhyOmyap73uIvj6mcpBrTe ^"Concierge" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Concierge"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 45
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 75
+                ^"DEX" INTEGER 65
+                ^"APP" INTEGER 60
+                ^"INT" INTEGER 65
+                ^"POW" INTEGER 50
+                ^"EDU" INTEGER 65
+            }
+            ^"Hit Points" INTEGER 13
+            ^"Magic Points" INTEGER 10
+            ^"Sanity" INTEGER 50
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "40% (20/8)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (Acting) 65%", "Charm 65%", "Listen 60%", "Persuade 60%", "Psychology 70%", "Spot Hidden 65%", "Other (as appropriate) 65%", "Own (as appropriate) 85%"]
+            ^"Description" STRING "Age 30–55. Hotel staff member; source of information, gopher and message runner."
+        }
+    }
+
+    #t9GJAXr7jMGdIXYIMcPCvCIi ^"Maid" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Maid"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 65
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 50
+                ^"DEX" INTEGER 70
+                ^"APP" INTEGER 55
+                ^"INT" INTEGER 55
+                ^"POW" INTEGER 60
+                ^"EDU" INTEGER 40
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 12
+            ^"Sanity" INTEGER 60
+            ^"Move Rate" INTEGER 9
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "35% (17/7)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (Cleaning and Tidying) 75%", "Listen 70%", "Persuade 40%", "Psychology 65%", "Spot Hidden 75%", "Other (as appropriate) 31%", "Own (as appropriate) 40%"]
+            ^"Description" STRING "Age 15+. Hotel staff member; source of information and message runner."
+        }
+    }
+
+    #twcj6xNxQrS6pWUO9s7MsxvI ^"Porter" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Porter"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 70
+                ^"CON" INTEGER 75
+                ^"SIZ" INTEGER 75
+                ^"DEX" INTEGER 55
+                ^"APP" INTEGER 65
+                ^"INT" INTEGER 60
+                ^"POW" INTEGER 50
+                ^"EDU" INTEGER 45
+            }
+            ^"Hit Points" INTEGER 10
+            ^"Magic Points" INTEGER 10
+            ^"Sanity" INTEGER 50
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "65% (32/13)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "65% (32/13)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Intimidate 55%", "Listen 50%", "Locksmith 40%", "Persuade 50%", "Psychology 50%", "Spot Hidden 50%", "Other (as appropriate) 41%", "Own (as appropriate) 45%"]
+            ^"Description" STRING "Age 15–50. Hotel staff member; source of information, gopher and message runner."
+        }
+    }
+
+    #tcbMH33Y7jpJd4mmcFugTqgN ^"Librarian/Academic Department Member" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Librarian/Academic Department Member"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 55
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 65
+                ^"APP" INTEGER 60
+                ^"INT" INTEGER 85
+                ^"POW" INTEGER 70
+                ^"EDU" INTEGER 70
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 14
+            ^"Sanity" INTEGER 70
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "35% (17/7)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (Filing) 75%", "Intimidate 65%", "Library Use 80%", "Listen 70%", "Spot Hidden 75%", "plus two subject specializations at 60% each", "Occult 45% (if applicable)", "Other (as appropriate) 51%", "Own (as appropriate) 75%"]
+            ^"Description" STRING "Age 22+. Keeper of documents whose knowledge of the catalog may be all that stands between the investigators and total confusion; a source of information."
+        }
+    }
+
+    #tthjx4ksfzFwuGIVA5hiBfvR ^"Local Guide" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Local Guide"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 55
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 50
+                ^"DEX" INTEGER 60
+                ^"APP" INTEGER 45
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 85
+                ^"EDU" INTEGER 45
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 17
+            ^"Sanity" INTEGER 85
+            ^"Move Rate" INTEGER 9
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "45% (22/9)"
+                    ^"Damage" STRING "1D3"
+                    ^"Description" STRING "City Guide"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "60% (30/12)"
+                    ^"Description" STRING "City Guide"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "50% (25/10)"
+                    ^"Damage" STRING "1D3"
+                    ^"Description" STRING "Trail Guide"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "45% (22/9)"
+                    ^"Description" STRING "Trail Guide"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["City Guide: Appraise 55%", "City Guide: Climb 40%", "City Guide: Listen 50%", "City Guide: Persuade 60%", "City Guide: Psychology 60%", "City Guide: Stealth 40%", "City Guide: Other (as appropriate) 41%", "City Guide: Own (as appropriate) 45%", "Trail Guide: First Aid 60%", "Trail Guide: Listen 60%", "Trail Guide: Natural World 60%", "Trail Guide: Navigate 60%", "Trail Guide: Psychology 50%", "Trail Guide: Spot Hidden 65%", "Trail Guide: Survival 60%", "Trail Guide: Other (as appropriate) 41%", "Trail Guide: Own (as appropriate) 45%"]
+            ^"Description" STRING "Age 10–25. Friendly, helpful local who knows the land, language and customs; two types are given, the urban Town/City Guide and the wilderness Trail Guide. May serve as interpreter, guide, broker or cover for a spy."
+        }
+    }
+
+    #tTK69nqZyGe1fw4ETx7uBaoZ ^"Missionary" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Missionary"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 50
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 45
+                ^"APP" INTEGER 75
+                ^"INT" INTEGER 65
+                ^"POW" INTEGER 70
+                ^"EDU" INTEGER 65
+            }
+            ^"Hit Points" INTEGER 12
+            ^"Magic Points" INTEGER 14
+            ^"Sanity" INTEGER 70
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "22% (11/4)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (e.g. Singing or Writing) 45%", "First Aid 50%", "Lore (appropriate faith) 35%", "Medicine 41%", "Natural World 50%", "Navigate 50%", "Persuade 60%", "Ride 45%", "Survival 40%", "Other (as appropriate) 51%", "Own (as appropriate) 65%"]
+            ^"Description" STRING "Age 20–70. Roving Christian proselytizer, idealistic and stubborn; consultant on matters of faith, folklore and local customs, but also an agitator in sensitive areas."
+        }
+    }
+
+    #tegf2oeN8VjHdIPv3L6H8PQE ^"Novice Monk/Nun" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Novice Monk/Nun"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 65
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 55
+                ^"APP" INTEGER 45
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 75
+                ^"EDU" INTEGER 55
+            }
+            ^"Hit Points" INTEGER 12
+            ^"Magic Points" INTEGER 15
+            ^"Sanity" INTEGER 75
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "40% (20/8)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "40% (20/8)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["History 55%", "Library Use 40%", "Listen 40%", "Lore (appropriate religion) 41%", "Persuade 50%", "Psychology 40%", "Stealth 40%", "Other (as appropriate, e.g. Sanskrit) 41%", "Own (as appropriate) 55%"]
+            ^"Description" STRING "Age 12–18. Novice early in their monastic residency, dressed in robes as the lowliest members of the order; host, source of information or consultant."
+        }
+    }
+
+    #t613zKzKxuFijc77DrqkY9KR ^"Dob-Dob" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Dob-Dob"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 75
+                ^"CON" INTEGER 80
+                ^"SIZ" INTEGER 75
+                ^"DEX" INTEGER 70
+                ^"APP" INTEGER 40
+                ^"INT" INTEGER 55
+                ^"POW" INTEGER 70
+                ^"EDU" INTEGER 55
+            }
+            ^"Hit Points" INTEGER 15
+            ^"Magic Points" INTEGER 14
+            ^"Sanity" INTEGER 70
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "65% (32/13)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Rhino-hide whip"
+                    ^"Skill Value" STRING "70% (35/14)"
+                    ^"Damage" STRING "1D3+1D2"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "65% (32/13)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Jump 60%", "Intimidate 65%", "Listen 30%", "Lore (Buddhism) 31%", "Psychology 50%", "Spot Hidden 65%", "Stealth 50%", "Tibetan 55%"]
+            ^"Description" STRING "Age 25–45. Feared Tibetan fighting monk, invariably filthy and grease-coated, chosen for size, temperament and difficulties with academia; maintains discipline within the monastery and beyond."
+        }
+    }
+
+    #td5eaKhBZkY9ChUdxosRureS ^"Railway Policeman" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Railway Policeman"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 65
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 65
+                ^"DEX" INTEGER 50
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 55
+                ^"EDU" INTEGER 60
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 11
+            ^"Sanity" INTEGER 55
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING ".38 Webley automatic revolver"
+                    ^"Skill Value" STRING "45% (22/9)"
+                    ^"Damage" STRING "1D10"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "25% (12/5)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["First Aid 55%", "Intimidate 55%", "Law 60%", "Listen 60%", "Persuade 60%", "Psychology 60%", "Spot Hidden 65%", "Other (as appropriate; usually English) 51%", "Own (as appropriate) 60%"]
+            ^"Description" STRING "Age 20–60. Anglo-Indian officer of the Indian railways, proud of the uniform but bored by the routine; a helping hand, a source of advice, or an adversary."
+        }
+    }
+
+    #tzUTht1Ete1eyb96Q3CxFpW6 ^"Refugee" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Refugee"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 50
+                ^"CON" INTEGER 50
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 55
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 55
+                ^"EDU" INTEGER 60
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 11
+            ^"Sanity" INTEGER 55
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "50% (25/10)"
+                    ^"Damage" STRING "1D3"
+                    ^"Description" STRING "Disgraced Military Officer"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Cavalry saber"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D8+1"
+                    ^"Description" STRING "Disgraced Military Officer"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Nagant M1895 7.62mm revolver"
+                    ^"Skill Value" STRING "50% (25/10)"
+                    ^"Damage" STRING "1D8"
+                    ^"Description" STRING "Disgraced Military Officer"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "27% (13/5)"
+                    ^"Description" STRING "Disgraced Military Officer"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "35% (17/7)"
+                    ^"Damage" STRING "1D3"
+                    ^"Description" STRING "Politically Active Student"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "27% (13/5)"
+                    ^"Description" STRING "Politically Active Student"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Disgraced Military Officer: First Aid 40%", "Disgraced Military Officer: Intimidate 65%", "Disgraced Military Officer: Navigate 40%", "Disgraced Military Officer: Persuade 60%", "Disgraced Military Officer: Psychology 60%", "Disgraced Military Officer: Ride 65%", "Disgraced Military Officer: Other (as appropriate) 41%", "Disgraced Military Officer: Own (as appropriate) 60%", "Politically Active Student: Art/Craft (Writing) 45%", "Politically Active Student: Library Use 45%", "Politically Active Student: Listen 50%", "Politically Active Student: Navigate 40%", "Politically Active Student: Science (Engineering) 51%", "Politically Active Student: Science (Geology) 51%", "Politically Active Student: Science (Physics) 51%", "Politically Active Student: Sleight of Hand 40%", "Politically Active Student: Other (as appropriate) 51%", "Politically Active Student: Other (as appropriate) 31%", "Politically Active Student: Own (as appropriate) 60%"]
+            ^"Description" STRING "All ages. Displaced person fleeing war, nervous and wary but full of grim determination; two variant skillsets given, a disgraced military officer and a politically active student. Interpreter, source of information, spy or military adviser."
+        }
+    }
+
+    #tFQZ2dDRh4mwXPb2efolnWnX ^"Religious Pilgrim" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Religious Pilgrim"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 45
+                ^"CON" INTEGER 60
+                ^"SIZ" INTEGER 65
+                ^"DEX" INTEGER 55
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 70
+                ^"POW" INTEGER 65
+                ^"EDU" INTEGER 65
+            }
+            ^"Hit Points" INTEGER 12
+            ^"Magic Points" INTEGER 13
+            ^"Sanity" INTEGER 65
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "27% (13/5)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Charm 60%", "First Aid 40%", "History 55%", "Lore (appropriate faith) 40%", "Natural World 40%", "Navigate 50%", "Spot Hidden 55%", "Survival 60%", "Other (as appropriate) 31%", "Own (as appropriate) 65%"]
+            ^"Description" STRING "Age 20–50. Pious traveler journeying to holy places for their own spiritual benefit; also a disguise used by explorers and spies. Consultant on faith, folklore and local customs."
+        }
+    }
+
+    #tSLQpfzeQZ6qrdJ8rVsSEZFM ^"Ruffian" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Ruffian"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 75
+                ^"CON" INTEGER 75
+                ^"SIZ" INTEGER 85
+                ^"DEX" INTEGER 40
+                ^"APP" INTEGER 55
+                ^"INT" INTEGER 50
+                ^"POW" INTEGER 75
+                ^"EDU" INTEGER 40
+            }
+            ^"Hit Points" INTEGER 16
+            ^"Magic Points" INTEGER 15
+            ^"Sanity" INTEGER 75
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "55% (24/11)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Garrote"
+                    ^"Skill Value" STRING "55% (24/11)"
+                    ^"Damage" STRING "1D6 per round unless escape (mnvr)"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "40% (20/8)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Appraise 55%", "Fast Talk 55%", "Intimidate 75%", "Psychology 60%", "Spot Hidden 55%", "Own (as appropriate) 40%"]
+            ^"Description" STRING "Age 20–40. Bully who extorts money or goods with threats and violence, arrogant, brutal and cocky. In a city, replace Fighting (Garrote) with Handgun 55% (.32 revolver, damage 1D8)."
+        }
+    }
+
+    #t6Kf6HESqHWLiAUipLonKVtE ^"Spy" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Spy"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 55
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 70
+                ^"DEX" INTEGER 60
+                ^"APP" INTEGER 55
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 70
+                ^"EDU" INTEGER 65
+            }
+            ^"Hit Points" INTEGER 12
+            ^"Magic Points" INTEGER 14
+            ^"Sanity" INTEGER 70
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "+1D4"
+            ^"Build" INTEGER 1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3+1D4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING ".25 Derringer"
+                    ^"Skill Value" STRING "40% (20/8)"
+                    ^"Damage" STRING "1D6"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "30% (15/6)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Art/Craft (Acting) 55%", "Charm 55%", "Fast Talk 65%", "Listen 50%", "Psychology 60%", "Sleight of Hand 60%", "Spot Hidden 65%", "Stealth 50%", "Other (as appropriate) 51%", "Own (as appropriate) 65%"]
+            ^"Description" STRING "Age 20–60. Agent gathering geographical, political or military secrets during the Great Game; watchful, sneaky and dangerous, posing as a trader, diplomat, explorer or pilgrim. Profile suits a wandering trader or aksakal."
+        }
+    }
+
+    #tRKq98GSAuHzfQnmZKgAxLLS ^"Street Child" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Street Child"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 40
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 25
+                ^"DEX" INTEGER 70
+                ^"APP" INTEGER 45
+                ^"INT" INTEGER 75
+                ^"POW" INTEGER 75
+                ^"EDU" INTEGER 20
+            }
+            ^"Hit Points" INTEGER 8
+            ^"Magic Points" INTEGER 15
+            ^"Sanity" INTEGER 75
+            ^"Move Rate" INTEGER 9
+            ^"Damage Bonus" STRING "–1"
+            ^"Build" INTEGER -1
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "45% (22/9)"
+                    ^"Damage" STRING "1D3–1"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "55% (27/11)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Climb 50%", "Fast Talk 65%", "Jump 50%", "Sleight of Hand 60%", "Spot Hidden 65%", "Stealth 60%", "Throw 40%", "Other (as appropriate) 30%", "Own (as appropriate) 30%"]
+            ^"Description" STRING "Age 5–15. Orphan or runaway surviving in the streets through cunning and determination, cheeky and observant with false bravado; informant, thief, spy, burglar or messenger."
+        }
+    }
+
+    #tPMTMng46JCUyCycORcfcvpF ^"Thief" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Thief"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 50
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 80
+                ^"APP" INTEGER 45
+                ^"INT" INTEGER 85
+                ^"POW" INTEGER 50
+                ^"EDU" INTEGER 50
+            }
+            ^"Hit Points" INTEGER 11
+            ^"Magic Points" INTEGER 10
+            ^"Sanity" INTEGER 50
+            ^"Move Rate" INTEGER 8
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "45% (22/9)"
+                    ^"Damage" STRING "1D3"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "60% (30/12)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Appraise 60%", "Climb 40%", "Fast Talk 65%", "Jump 40%", "Locksmith 46%", "Psychology 60%", "Sleight of Hand 70%", "Spot Hidden 65%", "Stealth 65%", "Own (as appropriate) 50%"]
+            ^"Description" STRING "Age 16–56. Pickpocket or burglar, quick and cunning, unlikely to use violence unless cornered; blends into a crowd. If a young orphan, use the Street Child profile."
+        }
+    }
+
+    #tznrRcYXvlrA1p9OMic0ZQas ^"Treasure Hunter" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Treasure Hunter"
+            ^"Role" STRING "Farmer Turned Treasure Hunter"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 55
+                ^"CON" INTEGER 75
+                ^"SIZ" INTEGER 60
+                ^"DEX" INTEGER 50
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 70
+                ^"POW" INTEGER 35
+                ^"EDU" INTEGER 45
+            }
+            ^"Hit Points" INTEGER 13
+            ^"Magic Points" INTEGER 7
+            ^"Sanity" INTEGER 35
+            ^"Move Rate" INTEGER 7
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "25% (12/5)"
+                    ^"Damage" STRING "1D3 or knife 1D4+2"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "25% (12/5)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Appraise 45%", "Art/Craft (Farming) 65%", "Art/Craft (Forgery) 35%", "History 35%", "Natural World 60%", "Navigate 40%", "Persuade 50%", "Spot Hidden 55%", "Other (as appropriate) 31%", "Own (as appropriate) 45%"]
+            ^"Description" STRING "A farmer or laborer who supplements his income by digging up caches of artifacts to sell to outsiders, sometimes resorting to forgery; inquisitive and occasionally fearful. For Western adventurers use the Explorer profile; for tertons use the Religious Pilgrim profile."
+        }
+    }
+
+    #t5IjjZjmMdmlpDhRbeMCZBkz ^"Tribal Member" DEF {
+        EXTENDS #COCnpcactor000000001 ^"Non-Player Character"
+        PROPERTIES {
+            ^"Name" STRING "Tribal Member"
+            ^"Characteristics" DEF {
+                ^"STR" INTEGER 60
+                ^"CON" INTEGER 55
+                ^"SIZ" INTEGER 45
+                ^"DEX" INTEGER 65
+                ^"APP" INTEGER 50
+                ^"INT" INTEGER 70
+                ^"POW" INTEGER 55
+                ^"EDU" INTEGER 30
+            }
+            ^"Hit Points" INTEGER 10
+            ^"Magic Points" INTEGER 11
+            ^"Sanity" INTEGER 55
+            ^"Move Rate" INTEGER 9
+            ^"Damage Bonus" STRING "0"
+            ^"Build" INTEGER 0
+            ^"Attacks" LIST OF [
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Brawl"
+                    ^"Skill Value" STRING "65% (32/13)"
+                    ^"Damage" STRING "1D3 or knife 1D8"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dao"
+                    ^"Skill Value" STRING "55% (27/11)"
+                    ^"Damage" STRING "1D8+1"
+                    ^"Description" STRING "heavy sword; Abor only"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Crossbow"
+                    ^"Skill Value" STRING "50% (25/5)"
+                    ^"Damage" STRING "1D6; if poisoned, treat as Strong"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Matchlock rifle"
+                    ^"Skill Value" STRING "45% (22/9)"
+                    ^"Damage" STRING "1D10+4"
+                },
+                ^"Creature Attack" DEF {
+                    ^"Attack" STRING "Dodge"
+                    ^"Skill Value" STRING "32% (16/6)"
+                }
+            ]
+            ^"Skills" LIST OF STRING ["Intimidate 60%", "Jump 40%", "Listen 60%", "Natural World 50%", "Navigate 50%", "Occult 35%", "Psychology 50%", "Spot Hidden 65%", "Stealth 60%", "Survival (Jungle) 60%", "Throw 50%", "Track 60%", "Other (as appropriate) 30%", "Own (as appropriate) 50%"]
+            ^"Description" STRING "Age 15–35. Member of an isolated tribe (Monpa, Mishmi, Abor, Naga, Thadou) of southern Tibet or northern Assam, proud, brave, wily and distrustful of outsiders; potentially lethal stalkers or useful guides if their trust can be won."
+        }
+    }
+
+}
