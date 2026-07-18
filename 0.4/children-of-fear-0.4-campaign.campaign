@@ -1,7 +1,9 @@
 # The Children of Fear — master campaign file.
-# Sequences the eight chapter ARCs into one long-form campaign. Structure only;
-# per-chapter detail lives in each `.arc`, and narrative summaries in the `.lore`.
-# Built on the Call of Cthulhu 7e core (see titterpig-dsl-callofcthulhu7e).
+# Sequences the eight chapter ARCs into one long-form campaign and models the
+# NON-LINEAR traversal between them (the middle chapters are attempted in any
+# order). Structure only; per-chapter detail lives in each `.arc`, and narrative
+# summaries in the `.lore` (see children-of-fear-0.4-campaign-overview.lore).
+# Built on the Call of Cthulhu 7e core (titterpig-dsl-callofcthulhu7e).
 
 CAMPAIGN "ChildrenOfFear" {
     NAME "The Children of Fear"
@@ -10,29 +12,65 @@ CAMPAIGN "ChildrenOfFear" {
     DEPENDS_ON "CallOfCthulhu7e_Core_Base"
 
     THEMES {
-        "An epic, player-led 1920s journey across China, Central Asia, northern India, and hidden Tibet, following the old Silk Road pilgrim route of Hiuen-Tsiang."
-        "A race to determine the fate of a prophesied reincarnation — the 'King of Fear' — and to reckon with the lieutenants who would see the world remade in terror."
-        "Scalable Mythos involvement: the Keeper tunes the threat from the cosmic (the Outer Gods) down to a low-key, occult-focused intrigue."
-        "Travel, culture, and comparative myth as gameplay: the route itself is the spine of the campaign, and the investigators choose the path they take."
+        "An epic, player-led 1920s journey along Hiuen-Tsiang's Silk Road pilgrim route across China, Central Asia, northern India, and hidden Tibet."
+        "A race to decide the fate of a prophesied reincarnation — the 'King of Fear' — bound within Agartha as the balance with Shambhala fails."
+        "Scalable Mythos: the Keeper tunes the threat from the Outer Gods down to a low-key, occult-focused intrigue."
+        "Travel and comparative myth as gameplay: the route is the spine, and the investigators choose the path they take."
     }
 
-    # --- Arc sequence -----------------------------------------------------
-    # Chapter 1 is authored; chapters 2-8 are added to this sequence as each
-    # `.arc` is built (their FROM ARC lines are held back so the campaign
-    # validates against the arcs that currently exist).
+    # --- Constituent arcs (membership) -----------------------------------
     FROM ARC "ChildrenOfFear_Ch1_City_of_Decaying_Splendor"
-    # FROM ARC "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun"
-    # FROM ARC "ChildrenOfFear_Ch3_Song_of_the_Lost_and_Forgotten"
-    # FROM ARC "ChildrenOfFear_Ch4_Old_Bones"
-    # FROM ARC "ChildrenOfFear_Ch5_Feast_and_Famine"
-    # FROM ARC "ChildrenOfFear_Ch6_Liberation"
-    # FROM ARC "ChildrenOfFear_Ch7_Spirits_of_the_Earth"
-    # FROM ARC "ChildrenOfFear_Ch8_The_Heart_of_the_World"
+    FROM ARC "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun"
+    FROM ARC "ChildrenOfFear_Ch3_Song_of_the_Lost_and_Forgotten"
+    FROM ARC "ChildrenOfFear_Ch4_Old_Bones"
+    FROM ARC "ChildrenOfFear_Ch5_Feast_and_Famine"
+    FROM ARC "ChildrenOfFear_Ch6_Liberation"
+    FROM ARC "ChildrenOfFear_Ch7_Spirits_of_the_Earth"
+    FROM ARC "ChildrenOfFear_Ch8_The_Heart_of_the_World"
+
+    # --- Traversal graph -------------------------------------------------
+    # The campaign is a DIRECTED GRAPH of chapter nodes, NOT a straight line.
+    # Consumers should traverse it by these phases/edges rather than assuming the
+    # membership order above is the play order.
+    FLOW {
+        PHASE ^"Recruitment" {
+            TRAVERSAL "linear"
+            NODES ["ChildrenOfFear_Ch1_City_of_Decaying_Splendor", "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun"]
+            DESCRIPTION "Chapters 1 then 2, in order: the investigators are recruited in Peking and, on the road west, take up the lama's plea to close the Gates of Agartha."
+        }
+        PHASE ^"Gathering the Components" {
+            TRAVERSAL "any-order"
+            NODES ["ChildrenOfFear_Ch3_Song_of_the_Lost_and_Forgotten", "ChildrenOfFear_Ch4_Old_Bones", "ChildrenOfFear_Ch5_Feast_and_Famine"]
+            DESCRIPTION "Chapters 3, 4, and 5 may be attempted in ANY player-chosen order as the party travels with the lama across India and Tibet gathering what the ritual needs. All three must be completed before the climax."
+            GATE {
+                REQUIRES_ALL ["ChildrenOfFear_Ch3_Song_of_the_Lost_and_Forgotten", "ChildrenOfFear_Ch4_Old_Bones", "ChildrenOfFear_Ch5_Feast_and_Famine"]
+                UNLOCKS "ChildrenOfFear_Ch6_Liberation"
+            }
+        }
+        PHASE ^"Climax" {
+            TRAVERSAL "linear"
+            NODES ["ChildrenOfFear_Ch6_Liberation", "ChildrenOfFear_Ch7_Spirits_of_the_Earth", "ChildrenOfFear_Ch8_The_Heart_of_the_World"]
+            DESCRIPTION "Chapters 6, 7, then 8, in order: the convergence and finale, where the campaign's outcome is decided."
+        }
+
+        # Explicit edges (directed transitions between chapter nodes).
+        EDGES {
+            EDGE FROM "ChildrenOfFear_Ch1_City_of_Decaying_Splendor" TO ["ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun"]
+            EDGE FROM "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun" TO ["ChildrenOfFear_Ch3_Song_of_the_Lost_and_Forgotten", "ChildrenOfFear_Ch4_Old_Bones", "ChildrenOfFear_Ch5_Feast_and_Famine"] CONDITION "any order — player choice"
+            EDGE FROM ["ChildrenOfFear_Ch3_Song_of_the_Lost_and_Forgotten", "ChildrenOfFear_Ch4_Old_Bones", "ChildrenOfFear_Ch5_Feast_and_Famine"] TO ["ChildrenOfFear_Ch6_Liberation"] CONDITION "after all three are complete"
+            EDGE FROM "ChildrenOfFear_Ch6_Liberation" TO ["ChildrenOfFear_Ch7_Spirits_of_the_Earth"]
+            EDGE FROM "ChildrenOfFear_Ch7_Spirits_of_the_Earth" TO ["ChildrenOfFear_Ch8_The_Heart_of_the_World"]
+        }
+    }
 
     PROGRESSION {
         BETWEEN "ChildrenOfFear_Ch1_City_of_Decaying_Splendor" AND "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun" {
-            DOWNTIME "Overland travel westward out of Peking toward Chang'an — weeks on the road for preparation, research, and investigator development."
-            ADVANCEMENT "Standard 7e experience: skill improvement checks from the chapter's rolls; the investigators build their expedition and contacts."
+            DOWNTIME "Overland travel westward out of Peking toward Chang'an (Sian) — weeks of preparation, research, and investigator development."
+            ADVANCEMENT "Standard 7e experience: skill-improvement checks from the chapter's rolls; the party builds its expedition and contacts."
+        }
+        BETWEEN "ChildrenOfFear_Ch2_To_the_Gates_of_the_Sun" AND "ChildrenOfFear_Ch5_Feast_and_Famine" {
+            DOWNTIME "Long-distance travel with the lama across Central Asia, India, and Tibet — the any-order Gathering phase; substantial time and mileage between the component chapters."
+            ADVANCEMENT "Experience accrues across the Gathering chapters; the party accumulates ritual components and lore toward the climax."
         }
     }
 }
